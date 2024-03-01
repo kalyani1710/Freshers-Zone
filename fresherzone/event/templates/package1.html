@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Package 1 - RS 10,000</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    margin-top: 100px;
+  }
+  h1 {
+    color:  #000080;
+    margin-bottom: 10px;
+  }
+  h2 {
+    color:  #000080;
+    margin-bottom: 20px;
+  }
+  p {
+    color: #666;
+    margin-bottom: 30px;
+  }
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .option {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; 
+  }
+  .option:hover {
+    transform: scale(1.05);
+  }
+  .sub-option {
+    margin-top: 10px;
+    display: none; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: left;
+  }
+  .sub-option label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .sub-option input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000080;
+    padding: 20px 0;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000080;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .special-option {
+    background-color: #f0f8ff;
+  }
+  .venue-img {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%; 
+    height: auto;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Freshers Zone</h1>
+    <h2>Package 1 - RS 10,000</h2>
+    <p>Choose from the following options:</p>
+    <div class="options">
+      <div class="option" onclick="toggleVenueOptions()">
+        <img src="venue.jpg" alt="Venue Image" class="venue-img"> <!-- Venue Image -->
+        Venue
+      </div>
+      <div id="venueOptions" class="sub-option">
+        <label><input type="checkbox"> Old Conference Hall</label><br>
+        <label><input type="checkbox"> New Conference Hall</label>
+      </div>
+      <div class="option" onclick="toggleThemeOptions()">Themes</div>
+      <div id="themeOptions" class="sub-option">
+        <label><input type="checkbox"> Bollywood</label><br>
+        <label><input type="checkbox"> Desi Swag</label><br>
+        <label><input type="checkbox"> Retro Night</label><br>
+        <label><input type="checkbox"> Beach Party</label><br>
+        <label><input type="checkbox"> Circus Theme</label>
+      </div>
+      <div class="option" onclick="toggleGameOptions()">Games</div>
+      <div id="gameOptions" class="sub-option">
+        <label><input type="checkbox"> Dance-off</label><br>
+        <label><input type="checkbox"> Guess Who</label><br>
+        <label class="special-option"><input type="checkbox"> Storytelling Circle</label><br> <!-- Added -->
+        <label class="special-option"><input type="checkbox"> Photo Scavenger</label><br> <!-- Added -->
+        <label><input type="checkbox"> Card Game</label><br> <!-- Example only -->
+        <label><input type="checkbox"> Board Game</label> <!-- Example only -->
+      </div>
+      <div class="option">Cards</div>
+      <div class="option">Songs</div>
+      <div class="option">Gift Items</div>
+      <div class="option">Food Items</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button onclick="goToNextPage()">Next</button> 
+  </div>
+
+  <script>
+    function toggleVenueOptions() {
+      var venueOptions = document.getElementById("venueOptions");
+      if (venueOptions.style.display === "none") {
+        venueOptions.style.display = "block";
+      } else {
+        venueOptions.style.display = "none";
+      }
+    }
+
+    function toggleThemeOptions() {
+      var themeOptions = document.getElementById("themeOptions");
+      if (themeOptions.style.display === "none") {
+        themeOptions.style.display = "block";
+      } else {
+        themeOptions.style.display = "none";
+      }
+    }
+
+    function toggleGameOptions() {
+      var gameOptions = document.getElementById("gameOptions");
+      if (gameOptions.style.display === "none") {
+        gameOptions.style.display = "block";
+      } else {
+        gameOptions.style.display = "none";
+      }
+    }
+
+    function goToNextPage() {
+      window.location.href = "next-page.html";
+    }
+  </script>
+</body>
+</html>

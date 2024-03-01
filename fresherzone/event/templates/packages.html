@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    margin-top: 50px;
+  }
+  h1 {
+    color: 000080;
+    margin-bottom: 20px;
+  }
+  .packages {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .package {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px;
+    margin: 0 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+  }
+  .package:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  .package h2 {
+    color: #000080;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .package p {
+    font-size: 16px;
+    color: #666;
+  }
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000080;
+    padding: 20px 0;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000080;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #e0e0e0;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Freshers Zone</h1>
+    <p>Choose a package:</p>
+    <div class="packages">
+      <div class="package" onclick="selectPackage(10000, 'package1.html')">
+        <h2>Package 1</h2>
+        <p> Rs10,000</p>
+      </div>
+      <div class="package" onclick="selectPackage(20000, 'package2.html')">
+        <h2>Package 2</h2>
+        <p>Rs20,000</p>
+      </div>
+      <div class="package" onclick="selectPackage(25000, 'package3.html')">
+        <h2>Package 3</h2>
+        <p>Rs25,000</p>
+      </div>
+      <div class="package" onclick="selectPackage(30000, 'package4.html')">
+        <h2>Package 4</h2>
+        <p>Rs30,000</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button onclick="goToNextPage()">Next</button>
+  </div>
+
+  <script>
+    let selectedPackage = null;
+    let selectedPage = null;
+
+    function selectPackage(price, page) {
+      selectedPackage = price;
+      selectedPage = page;
+      console.log("Selected package price: Rs" + selectedPackage);
+    }
+
+    function goToNextPage() {
+      if (selectedPackage === null) {
+        alert("Please select a package first.");
+      } else {
+        window.location.href = selectedPage;
+      }
+    }
+  </script>
+</body>
+</html>

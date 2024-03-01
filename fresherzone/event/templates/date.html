@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Page</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333333;
+  }
+  .container {
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  h1 {
+    color: #000080;
+    font-size: 32px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  .form-section {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666666;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  input[type="date"],
+  input[type="time"],
+  input[type="text"] {
+    width: calc(100% - 10px);
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  input[type="date"]:focus,
+  input[type="time"]:focus,
+  input[type="text"]:focus {
+    border-color: #000080;
+  }
+  .footer {
+    margin-top: 20px;
+  }
+  button {
+    padding: 12px 24px;
+    background-color: #000080;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  button:hover:enabled {
+    background-color: #000080;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fresher Zone</h1>
+    <p>Submit the following information!</p>
+    <div class="form-section">
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+    <div class="form-section">
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required>
+    </div>
+    <div class="form-section">
+      <label for="venue">Venue:</label>
+      <input type="text" id="venue" name="venue" value="MJC" readonly>
+    </div>
+  </div>
+  <div class="footer">
+    <a href="packages.html"><button id="nextBtn" disabled>Next</button></a>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const dateInput = document.getElementById('date');
+      const timeInput = document.getElementById('time');
+      const nextButton = document.getElementById('nextBtn');
+      
+      dateInput.addEventListener('change', toggleButton);
+      timeInput.addEventListener('change', toggleButton);
+      
+      function toggleButton() {
+        if (dateInput.value && timeInput.value) {
+          nextButton.removeAttribute('disabled');
+        } else {
+          nextButton.setAttribute('disabled', true);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
