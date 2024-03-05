@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body style=" background-image: url('{% static 'images/home.jpg' %}'); background-size:150%; background-position: center;">
+    <div class="container">
+        <h1>Welcome to <br>Freshers Zone!</h1>
+        <p>We're glad you're here.</p>
+        <a href="{% url 'date' %}"><button class="btn">Let's Go</button></a>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

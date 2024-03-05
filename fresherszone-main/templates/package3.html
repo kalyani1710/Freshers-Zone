@@ -1,0 +1,33 @@
+<!-- package3.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package 3 - RS 25,000</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Freshers Zone</h1>
+        <h2>Package 3 - RS 25,000</h2>
+        <p>Choose from the following options:</p>
+        <div class="options">
+            <div class="option">Venue</div>
+            <div class="option">Themes</div>
+            <div class="option">Games</div>
+            <div class="option">Cards</div>
+            <div class="option">Songs</div>
+            <div class="option">Gift Items</div>
+            <div class="option">Food Items</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button onclick="goToNextPage()">Next</button>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

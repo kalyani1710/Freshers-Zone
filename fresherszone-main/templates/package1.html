@@ -1,0 +1,55 @@
+<!-- package1.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package 1 - RS 10,000</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Freshers Zone</h1>
+        <h2>Package 1 - RS 10,000</h2>
+        <p>Choose from the following options:</p>
+        <div class="options">
+            <div class="option" onclick="toggleVenueOptions()">
+                <img src="{% static 'images/venue.jpg' %}" alt="Venue Image" class="venue-img"> <!-- Venue Image -->
+                Venue
+            </div>
+            <div id="venueOptions" class="sub-option">
+                <label><input type="checkbox"> Old Conference Hall</label><br>
+                <label><input type="checkbox"> New Conference Hall</label>
+            </div>
+            <div class="option" onclick="toggleThemeOptions()">Themes</div>
+            <div id="themeOptions" class="sub-option">
+                <label><input type="checkbox"> Bollywood</label><br>
+                <label><input type="checkbox"> Desi Swag</label><br>
+                <label><input type="checkbox"> Retro Night</label><br>
+                <label><input type="checkbox"> Beach Party</label><br>
+                <label><input type="checkbox"> Circus Theme</label>
+            </div>
+            <div class="option" onclick="toggleGameOptions()">Games</div>
+            <div id="gameOptions" class="sub-option">
+                <label><input type="checkbox"> Dance-off</label><br>
+                <label><input type="checkbox"> Guess Who</label><br>
+                <label class="special-option"><input type="checkbox"> Storytelling Circle</label><br> <!-- Added -->
+                <label class="special-option"><input type="checkbox"> Photo Scavenger</label><br> <!-- Added -->
+                <label><input type="checkbox"> Card Game</label><br> <!-- Example only -->
+                <label><input type="checkbox"> Board Game</label> <!-- Example only -->
+            </div>
+            <div class="option">Cards</div>
+            <div class="option">Songs</div>
+            <div class="option">Gift Items</div>
+            <div class="option">Food Items</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button onclick="goToNextPage()">Next</button>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- packages.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Freshers Zone</h1>
+        <h2>Packages</h2>
+        <p>Choose a package:</p>
+        <div class="packages">
+            <div class="package" onclick="selectPackage(10000, '{% url 'package1' %}')">
+                <h2>Package 1</h2>
+                <p>Rs10,000</p>
+            </div>
+            <div class="package" onclick="selectPackage(20000, '{% url 'package2' %}')">
+                <h2>Package 2</h2>
+                <p>Rs20,000</p>
+            </div>
+            <div class="package" onclick="selectPackage(25000, '{% url 'package3' %}')">
+                <h2>Package 3</h2>
+                <p>Rs25,000</p>
+            </div>
+            <div class="package" onclick="selectPackage(30000, '{% url 'package4' %}')">
+                <h2>Package 4</h2>
+                <p>Rs30,000</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button onclick="goToNextPage()">Next</button>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

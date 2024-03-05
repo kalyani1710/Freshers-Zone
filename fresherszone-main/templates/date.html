@@ -1,0 +1,36 @@
+<!-- date.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container_date">
+        <h1>Date Page</h1>
+        <form action="{% url 'packages' %}" method="post">
+            {% csrf_token %}
+            <div class="form-section">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-section">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-section">
+                <label for="venue">Venue:</label>
+                <input type="text" id="venue" name="venue" value="MJC" readonly>
+            </div>
+            <div class="btn" id="nextBtn" disabled>
+                <button >Next</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
